@@ -30,7 +30,14 @@ notifications:
       secure: LPNgf0Ra6Vu6I7XuK7tcnyFWJg+becx1RfAR35feWK81sru8TyuldQIt7uAKMA8tqFTP8j1Af7iz7UDokbCCfDNCX1GxdAWgXs+UKpwhO89nsidHAsCkW2lWSEM0E3xtOJDyNFoauiHxBKGKUsApJTnf39H+EW9tWrqN5W2sZg8=
     on_success: never
   webhooks:
-    https://docs.travis-ci.com/update_webhook_payload_doc
+    urls:
+    - 'https://docs.travis-ci.com/update_webhook_payload_doc'
+    - 'https://webhook.atomist.com/atomist/travis/teams/T4UMAMTHC'
+    on_cancel: always
+    on_error: always
+    on_start: always
+    on_failure: always
+    on_success: always
 install:
   - rvm use 2.3.1 --install
   - bundle install --deployment
